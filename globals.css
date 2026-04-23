@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cloud text-textprimary font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-darkaccent text-white px-6 py-3 rounded-full font-medium 
+           hover:bg-accent transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-darkaccent text-darkaccent px-6 py-3 rounded-full 
+           font-medium hover:bg-darkaccent hover:text-white transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply border border-softgray text-textprimary px-6 py-3 rounded-full 
+           font-medium hover:border-darkaccent hover:text-darkaccent transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 
+           overflow-hidden border border-softgray;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-softgray rounded-lg focus:outline-none 
+           focus:ring-2 focus:ring-accent focus:border-transparent bg-cream;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-serif text-textprimary mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-textsecondary text-lg mb-12 max-w-2xl mx-auto;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-darkaccent;
+}
+
+/* Swiper Custom Styles */
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-darkaccent !important;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-accent !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-darkaccent !important;
+}
+
+/* Loading Animation */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #F3E5AB;
+  border-bottom-color: #A6937C;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
